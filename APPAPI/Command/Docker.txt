@@ -1,0 +1,6 @@
+// ใช้ Pull Image Sql Server 2019 For linux
+docker pull mcr.microsoft.com/mssql/server:2019-latest
+
+// ใช้ Run Docker
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=/7WcG(wtd^" -e TZ=Asia/Bangkok -p 1433:1433 --name sql2019 -h sql2019 -d mcr.microsoft.com/mssql/server:2019-latest
+
