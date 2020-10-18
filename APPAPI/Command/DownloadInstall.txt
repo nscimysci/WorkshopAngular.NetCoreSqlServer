@@ -1,0 +1,7 @@
+.NetCore Version 3.1 : https://dotnet.microsoft.com/download/dotnet-core
+VsCode : https://code.visualstudio.com/
+Git : https://git-scm.com/
+Sourcetree : https://www.sourcetreeapp.com/
+Postman : https://www.postman.com/
+Sql Server Management Studio : https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
+Docker : https://docs.docker.com/docker-for-windows/install/
