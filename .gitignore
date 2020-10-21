@@ -70,3 +70,7 @@ APPAPI/obj/Debug/netcoreapp3.1/APPAPI.RazorTargetAssemblyInfo.cache
 APPAPI/obj/Debug/netcoreapp3.1/project.razor.json
 APPAPI/obj/Debug/netcoreapp3.1/staticwebassets/APPAPI.StaticWebAssets.Manifest.cache
 APPAPI/obj/Debug/netcoreapp3.1/staticwebassets/APPAPI.StaticWebAssets.xml
+APPAPI/bin/Debug/netcoreapp3.1/CryptoHelper.dll
+APPAPI/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+APPAPI/bin/Debug/netcoreapp3.1/System.DirectoryServices.dll
+APPAPI/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.DirectoryServices.dll

@@ -1,0 +1,11 @@
+// New Project
+dotnet new webapi
+
+// JwtBearer
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 3.1.9
+
+// ใช้ LDAP Authen
+dotnet add package System.DirectoryServices --version 4.7.0
+
+// เข้ารหัส Password
+dotnet add package CryptoHelper --version 3.0.2

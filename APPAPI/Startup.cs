@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using APPAPI.Database;
+using APPAPI.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,13 +24,22 @@ namespace APPAPI
         }
 
         public IConfiguration Configuration { get; }
+        readonly string AllowMyOrigin = "AllowMyOrigin";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-              services.AddDbContext<DatabaseContext> (options =>
-                options.UseSqlServer ("Server=localhost,1433;Initial Catalog=testdb;Persist Security Info=False;User ID=sa;Password=/7WcG(wtd^;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30"));
-                
+
+            // ให้สามารถ Cross-Origin Resource Sharing (CORS)
+            services.ConfigureCors();
+
+            // ให้อ่าน Config Sql Server และ AddDbContext
+            services.ConfigureSqlContext(Configuration);
+
+            // อ่าน Token JWT
+            services.ConfigureJWTuthentication(Configuration);
+
+
             services.AddControllers();
         }
 
@@ -43,7 +53,13 @@ namespace APPAPI
 
             app.UseHttpsRedirection();
 
+            // ใช้งาน CORS
+            app.UseCors(AllowMyOrigin);
+
             app.UseRouting();
+
+            // ใช้งาน Authen
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
