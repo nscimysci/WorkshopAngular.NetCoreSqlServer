@@ -19,6 +19,7 @@ namespace APPAPI.Database
         public virtual DbSet<Brands> Brands { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -97,6 +98,27 @@ namespace APPAPI.Database
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("FK__products__catego__29572725");
+            });
+
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Createdby).HasMaxLength(50);
+
+                entity.Property(e => e.Createddate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Fullname).HasMaxLength(100);
+
+                entity.Property(e => e.Modifiedby).HasMaxLength(50);
+
+                entity.Property(e => e.Modifieddate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Username).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

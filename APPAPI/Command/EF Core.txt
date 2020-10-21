@@ -7,7 +7,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore
 
-
+// Gen Model และ Context
 dotnet ef dbcontext scaffold "Server=localhost,1433;Initial Catalog=workshopdb;Persist Security Info=False;User ID=sa;Password=/7WcG(wtd^;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30" Microsoft.EntityFrameworkCore.SqlServer -o Models -c DatabaseContext --context-dir Database -f
 
 //--------------------- Startup.cs
